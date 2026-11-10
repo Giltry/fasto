@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FASTO - Gran Premio Retro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="wrap">
+    <canvas id="game" width="640" height="360"></canvas>
+    <div id="ui">
+
+      <section class="screen" id="scr-title">
+        <h1 class="logo">FASTO</h1>
+        <p class="subtitle">GRAN PREMIO RETRO</p>
+        <div class="menu-list">
+          <button class="opt" data-action="start">INICIAR</button>
+          <button class="opt" data-action="controls">CONTROLES</button>
+        </div>
+        <p class="hint blink">↑ ↓ MOVER · ENTER ELEGIR</p>
+      </section>
+
+      <section class="screen" id="scr-car">
+        <h2>ELIGE TU AUTO</h2>
+        <div class="cards" id="car-cards"></div>
+        <p class="hint">← → ELEGIR · ENTER CONFIRMAR · ESC VOLVER</p>
+      </section>
+
+      <section class="screen" id="scr-diff">
+        <h2>DIFICULTAD</h2>
+        <div class="menu-list wide" id="diff-list"></div>
+        <p class="hint" id="diff-note"></p>
+        <p class="hint">↑ ↓ ELEGIR · ENTER CONFIRMAR · ESC VOLVER</p>
+      </section>
+
+      <section class="screen" id="scr-track">
+        <h2>ELIGE EL CIRCUITO</h2>
+        <div class="cards" id="track-cards"></div>
+        <p class="hint">← → ELEGIR · ENTER CORRER · ESC VOLVER</p>
+      </section>
+
+      <section class="screen" id="scr-controls">
+        <h2>CONTROLES</h2>
+        <table class="keys">
+          <tr><td>↑ / W</td><td>ACELERAR</td></tr>
+          <tr><td>↓ / S</td><td>FRENAR</td></tr>
+          <tr><td>← → / A D</td><td>GIRAR</td></tr>
+          <tr><td>ESPACIO / SHIFT</td><td>NITRO (3 POR CARRERA)</td></tr>
+          <tr><td>ESC / P</td><td>PAUSA</td></tr>
+          <tr><td>M</td><td>SILENCIAR SONIDO</td></tr>
+        </table>
+        <p class="hint small">ESQUIVA CONOS (FRENAN), ACEITE / HIELO (DERRAPAS),<br>ROCAS / BARRERAS (TE DETIENEN) Y LODO (TE HUNDE).</p>
+        <div class="menu-list">
+          <button class="opt" data-action="back">VOLVER</button>
+        </div>
+      </section>
+
+      <section class="screen" id="scr-pause">
+        <h2>PAUSA</h2>
+        <div class="menu-list">
+          <button class="opt" data-action="resume">CONTINUAR</button>
+          <button class="opt" data-action="restart">REINICIAR</button>
+          <button class="opt" data-action="quit">SALIR AL MENU</button>
+        </div>
+      </section>
+
+      <section class="screen" id="scr-results">
+        <h2 id="res-title">RESULTADOS</h2>
+        <p class="unlock" id="res-unlock"></p>
+        <table class="results" id="res-table"></table>
+        <div class="menu-list row">
+          <button class="opt" data-action="retry">REINTENTAR</button>
+          <button class="opt" data-action="menu">MENU</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="js/util.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/tracks.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/race.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
